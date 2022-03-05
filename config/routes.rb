@@ -3,4 +3,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  # post '/api-keys', to: 'api_keys#create'
+  # delete '/api-keys', to: 'api_keys#destroy'
+  # get '/api-keys', to: 'api_keys#index'
+
+  resource :api_keys, only: [:index, :show, :create, :destroy]
 end
