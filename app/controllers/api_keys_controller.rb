@@ -2,13 +2,13 @@ class ApiKeysController < ApplicationController
    include ApiKeyAuthenticatable
 
       # Require API key authentication for index
-   prepend_before_action :authenticate_with_api_key!, only: [:index]
+   prepend_before_action :authenticate_with_api_key!, only: [:show]
    
    # Optional API key authentication for logout
    prepend_before_action :authenticate_with_api_key, only: [:destroy]
 
    def index
-      render json: current_bearer.api_keys
+      
    end
 
    def create
@@ -26,10 +26,10 @@ class ApiKeysController < ApplicationController
    end
 
    def show
-
+      render json: current_bearer.api_keys
    end
 
    def destroy
-
+      current_api_key&.destroy
    end
 end
