@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # post '/api-keys', to: 'api_keys#create'
   # delete '/api-keys', to: 'api_keys#destroy'
   # get '/api-keys', to: 'api_keys#index'
+  devise_for :users, controllers: {sessions: 'users/sessions'}
 
   resource :api_keys, only: [:index, :show, :create, :destroy]
 end
