@@ -22,6 +22,9 @@ gem "puma", "~> 5.0"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
+#Devise
+gem 'devise', '~> 4.8', '>= 4.8.1'
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
 
@@ -47,3 +50,5 @@ group :development do
   # gem "spring"
 end
 
+
+gem "byebug", "~> 11.1", :groups => [:development, :test]
